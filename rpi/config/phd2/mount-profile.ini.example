@@ -1,0 +1,12 @@
+# Merge these values into the desired PHD2 profile with
+# scripts/configure-phd2-profile.py. Camera and calibration data are deliberately
+# not stored in this repository.
+[profile/2/scope]
+LastMenuChoice=INDI Mount [Alpaca Telescope]
+
+[profile/2/AlpacaMount]
+Endpoint=127.0.0.1:11111:0
+
+[profile/2/indi]
+INDImount=Alpaca Telescope
+

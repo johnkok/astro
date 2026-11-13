@@ -1,0 +1,18 @@
+[Unit]
+Description=Servo42D ASCOM Alpaca telescope driver
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=pi
+Group=pi
+WorkingDirectory=/opt/servo42d-ascom-alpaca
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/servo42d-ascom-alpaca/.venv/bin/servo42d-alpaca --config /opt/servo42d-ascom-alpaca/config.json
+Restart=on-failure
+RestartSec=5s
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=Connect the INDI Alpaca telescope bridge
+Wants=network-online.target servo42d-alpaca.service
+Requires=pins.service
+After=network-online.target servo42d-alpaca.service pins.service
+
+[Service]
+Type=oneshot
+User=pi
+Group=pi
+ExecStart=/usr/local/bin/indi-alpaca-connect
+RemainAfterExit=yes
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

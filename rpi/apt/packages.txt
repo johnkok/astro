@@ -1,0 +1,54 @@
+# Core PINS/N.I.N.A. stack
+pins
+pinsdaemon
+phd2
+indi-bin
+libindi-dev
+
+# PINS plugins present on the reference device
+pins-plugin-alpaca
+pins-plugin-groundstation
+pins-plugin-joko
+pins-plugin-livestack
+pins-plugin-nightsummary
+pins-plugin-ninaapi
+pins-plugin-orbitals
+pins-plugin-orbuculum
+pins-plugin-phd2tools
+pins-plugin-pins
+pins-plugin-polaralignment
+pins-plugin-tenmicron
+pins-plugin-touch-n-stars
+
+# Runtime and development tools
+python3
+python3-venv
+python3-pip
+curl
+git
+cmake
+ninja-build
+build-essential
+can-utils
+
+# INDI build dependencies
+libnova-dev
+libcfitsio-dev
+libusb-1.0-0-dev
+libjpeg-dev
+libcurl4-gnutls-dev
+libgsl-dev
+libboost-regex-dev
+libraw-dev
+libfftw3-dev
+libev-dev
+libgps-dev
+libeigen3-dev
+libgtest-dev
+libdc1394-dev
+libtheora-dev
+libavcodec-dev
+libavdevice-dev
+libavformat-dev
+libswscale-dev
+

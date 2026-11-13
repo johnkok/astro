@@ -1,0 +1,1 @@
+deb [arch=arm64 signed-by=/usr/share/keyrings/pins-archive-keyring.gpg] https://repo.touch-n-stars.eu/reprepro trixie main

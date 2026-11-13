@@ -1,0 +1,77 @@
+#!/bin/sh
+set -eu
+
+INDI_HOST=127.0.0.1
+INDI_PORT=7624
+DEVICE="Alpaca Telescope"
+NINA_ALPACA_URL=http://127.0.0.1:32330/api/v1/telescope/0
+ATTEMPT=0
+
+while ! /usr/bin/indi_getprop -h "$INDI_HOST" -p "$INDI_PORT" \
+    "$DEVICE.CONNECTION.CONNECT" >/dev/null 2>&1; do
+    ATTEMPT=$((ATTEMPT + 1))
+    if [ "$ATTEMPT" -ge 90 ]; then
+        echo "INDI Alpaca Telescope did not appear within 90 seconds" >&2
+        exit 1
+    fi
+    sleep 1
+done
+
+/usr/bin/indi_setprop -h "$INDI_HOST" -p "$INDI_PORT" \
+    "$DEVICE.DEVICE_ADDRESS.ADDRESS=127.0.0.1"
+/usr/bin/indi_setprop -h "$INDI_HOST" -p "$INDI_PORT" \
+    "$DEVICE.DEVICE_ADDRESS.PORT=11111"
+/usr/bin/indi_setprop -h "$INDI_HOST" -p "$INDI_PORT" \
+    "$DEVICE.CONNECTION_MODE.CONNECTION_TCP=On"
+/usr/bin/indi_setprop -h "$INDI_HOST" -p "$INDI_PORT" \
+    "$DEVICE.CONNECTION.CONNECT=On"
+
+ATTEMPT=0
+while [ "$ATTEMPT" -lt 15 ]; do
+    if /usr/bin/indi_getprop -h "$INDI_HOST" -p "$INDI_PORT" \
+        "$DEVICE.CONNECTION.CONNECT" 2>/dev/null | grep -q '=On$'; then
+        echo "INDI Alpaca Telescope connected to 127.0.0.1:11111"
+        break
+    fi
+    ATTEMPT=$((ATTEMPT + 1))
+    sleep 1
+done
+
+if [ "$ATTEMPT" -ge 15 ]; then
+    echo "INDI Alpaca Telescope failed to connect" >&2
+    exit 1
+fi
+
+# PINS/NINA exposes its selected equipment as an Alpaca proxy on port 32330.
+# Connecting INDI alone is not enough: the NINA telescope instance must also
+# be connected before the web controls can issue MoveAxis or PulseGuide.
+ATTEMPT=0
+while ! /usr/bin/curl -fsS \
+    "$NINA_ALPACA_URL/name?ClientID=4242&ClientTransactionID=1" \
+    >/dev/null 2>&1; do
+    ATTEMPT=$((ATTEMPT + 1))
+    if [ "$ATTEMPT" -ge 90 ]; then
+        echo "NINA Alpaca telescope proxy did not appear within 90 seconds" >&2
+        exit 1
+    fi
+    sleep 1
+done
+
+/usr/bin/curl -fsS -X PUT \
+    -d 'Connected=true&ClientID=4242&ClientTransactionID=2' \
+    "$NINA_ALPACA_URL/connected" >/dev/null
+
+ATTEMPT=0
+while [ "$ATTEMPT" -lt 30 ]; do
+    if /usr/bin/curl -fsS \
+        "$NINA_ALPACA_URL/connected?ClientID=4242&ClientTransactionID=3" \
+        | grep -q '"Value"[[:space:]]*:[[:space:]]*true'; then
+        echo "NINA selected mount connected through its Alpaca proxy"
+        exit 0
+    fi
+    ATTEMPT=$((ATTEMPT + 1))
+    sleep 1
+done
+
+echo "NINA selected mount failed to connect" >&2
+exit 1

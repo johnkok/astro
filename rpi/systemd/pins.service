@@ -1,0 +1,16 @@
+[Unit]
+Description=NINA Service
+After=network.target
+
+[Service]
+Type=simple
+Environment="LD_LIBRARY_PATH=/opt/opencvsharp/lib:/usr/lib/aarch64-linux-gnu"
+ExecStart=/home/pi/pins/NINA
+WorkingDirectory=/home/pi/pins/
+User=pi
+Group=pi
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

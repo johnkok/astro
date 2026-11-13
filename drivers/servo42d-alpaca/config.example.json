@@ -1,0 +1,16 @@
+{
+  "server": { "host": "0.0.0.0", "port": 11111, "discovery": true },
+  "can": { "interface": "socketcan", "channel": "can0", "bitrate": 500000, "ra_motor_id": 1, "dec_motor_id": 2 },
+  "mount": {
+    "ra_gear_ratio": 144.0,
+    "dec_gear_ratio": 144.0,
+    "microsteps": 16,
+    "ra_positive_direction": "ccw",
+    "dec_positive_direction": "ccw",
+    "acceleration": 236,
+    "max_axis_rate_deg_per_sec": 2.0,
+    "goto_rate_deg_per_sec": 1.0,
+    "initial_ra_hours": 0.0,
+    "initial_dec_degrees": 0.0
+  }
+}

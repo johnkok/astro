@@ -1,0 +1,9 @@
+{
+  "Id": "Alpaca Telescope",
+  "IndiAddress": "127.0.0.1",
+  "IndiAutoSearch": "true",
+  "IndiConnectionMode": "CONNECTION_TCP",
+  "IndiDriver": "indi_alpaca_telescope",
+  "IndiPort": "11111",
+  "LastDeviceName": "Alpaca Telescope (INDI)"
+}

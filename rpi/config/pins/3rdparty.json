@@ -1,0 +1,38 @@
+{
+  "camera": [],
+  "filterwheel": [
+    {
+      "Name": "indi_example",
+      "Label": "Example Filter Wheel",
+      "Type": "filterwheel"
+    }
+  ],
+  "flatpanel": [],
+  "focuser": [],
+  "rotator": [],
+  "switches": [
+    {
+      "Name": "indi_gpsd",
+      "Label": "indi-gpsd",
+      "Type": "switches"
+    },
+    {
+      "Name": "indi_gpsnmea",
+      "Label": "indi-gpsnmea",
+      "Type": "switches"
+    },
+    {
+      "Name": "indi_webcam_ccd",
+      "Label": "indi-webcam",
+      "Type": "switches"
+    }
+  ],
+  "telescope": [
+    {
+      "Name": "indi_alpaca_telescope",
+      "Label": "Alpaca Telescope",
+      "Type": "telescope"
+    }
+  ],
+  "weather": []
+}

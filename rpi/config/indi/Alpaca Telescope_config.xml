@@ -1,0 +1,212 @@
+<INDIDriver>
+<newSwitchVector device='Alpaca Telescope' name='DEBUG'>
+  <oneSwitch name='ENABLE'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='DISABLE'>
+      On
+  </oneSwitch>
+</newSwitchVector>
+<newNumberVector device='Alpaca Telescope' name='POLLING_PERIOD'>
+  <oneNumber name='PERIOD_MS'>
+      1000
+  </oneNumber>
+</newNumberVector>
+<newSwitchVector device='Alpaca Telescope' name='CONNECTION_MODE'>
+  <oneSwitch name='CONNECTION_TCP'>
+      On
+  </oneSwitch>
+</newSwitchVector>
+<newTextVector device='Alpaca Telescope' name='DEVICE_ADDRESS'>
+  <oneText name='ADDRESS'>
+      127.0.0.1
+  </oneText>
+  <oneText name='PORT'>
+      11111
+  </oneText>
+</newTextVector>
+<newSwitchVector device='Alpaca Telescope' name='CONNECTION_TYPE'>
+  <oneSwitch name='TCP'>
+      On
+  </oneSwitch>
+  <oneSwitch name='UDP'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='DEVICE_LAN_SEARCH'>
+  <oneSwitch name='INDI_ENABLED'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='INDI_DISABLED'>
+      On
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='DEBUG_LEVEL'>
+  <oneSwitch name='DBG_ERROR'>
+      On
+  </oneSwitch>
+  <oneSwitch name='DBG_WARNING'>
+      On
+  </oneSwitch>
+  <oneSwitch name='DBG_SESSION'>
+      On
+  </oneSwitch>
+  <oneSwitch name='DBG_DEBUG'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='DBG_EXTRA_1'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='DBG_EXTRA_2'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='LOGGING_LEVEL'>
+  <oneSwitch name='LOG_ERROR'>
+      On
+  </oneSwitch>
+  <oneSwitch name='LOG_WARNING'>
+      On
+  </oneSwitch>
+  <oneSwitch name='LOG_SESSION'>
+      On
+  </oneSwitch>
+  <oneSwitch name='LOG_DEBUG'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='LOG_EXTRA_1'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='LOG_EXTRA_2'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='LOG_OUTPUT'>
+  <oneSwitch name='CLIENT_DEBUG'>
+      On
+  </oneSwitch>
+  <oneSwitch name='FILE_DEBUG'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newTextVector device='Alpaca Telescope' name='ACTIVE_DEVICES'>
+  <oneText name='ACTIVE_GPS'>
+      GPS Simulator
+  </oneText>
+  <oneText name='ACTIVE_DOME'>
+      Dome Simulator
+  </oneText>
+</newTextVector>
+<newSwitchVector device='Alpaca Telescope' name='DOME_POLICY'>
+  <oneSwitch name='DOME_IGNORED'>
+      On
+  </oneSwitch>
+  <oneSwitch name='DOME_LOCKS'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='TELESCOPE_REVERSE_MOTION'>
+  <oneSwitch name='REVERSE_NS'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='REVERSE_WE'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='TELESCOPE_SLEW_RATE'>
+  <oneSwitch name='1x'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='2x'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='3x'>
+      On
+  </oneSwitch>
+  <oneSwitch name='4x'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='TELESCOPE_TRACK_MODE'>
+  <oneSwitch name='TRACK_SIDEREAL'>
+      On
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='USEJOYSTICK'>
+  <oneSwitch name='ENABLE'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='DISABLE'>
+      On
+  </oneSwitch>
+</newSwitchVector>
+<newTextVector device='Alpaca Telescope' name='JOYSTICKSETTINGS'>
+  <oneText name='MOTIONDIR'>
+      JOYSTICK_1
+  </oneText>
+  <oneText name='MOTIONDIRNS'>
+      AXIS_8
+  </oneText>
+  <oneText name='MOTIONDIRWE'>
+      AXIS_7
+  </oneText>
+  <oneText name='SLEWPRESET'>
+      JOYSTICK_2
+  </oneText>
+  <oneText name='SLEWPRESETUP'>
+      BUTTON_5
+  </oneText>
+  <oneText name='SLEWPRESETDOWN'>
+      BUTTON_6
+  </oneText>
+  <oneText name='ABORTBUTTON'>
+      BUTTON_1
+  </oneText>
+  <oneText name='PARKBUTTON'>
+      BUTTON_2
+  </oneText>
+  <oneText name='UNPARKBUTTON'>
+      BUTTON_3
+  </oneText>
+</newTextVector>
+<newTextVector device='Alpaca Telescope' name='SNOOP_JOYSTICK'>
+  <oneText name='SNOOP_JOYSTICK_DEVICE'>
+      Joystick
+  </oneText>
+</newTextVector>
+<newSwitchVector device='Alpaca Telescope' name='MOTION_CONTROL_MODE'>
+  <oneSwitch name='MOTION_CONTROL_MODE_JOYSTICK'>
+      On
+  </oneSwitch>
+  <oneSwitch name='MOTION_CONTROL_MODE_AXES'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='JOYSTICK_LOCK_AXIS'>
+  <oneSwitch name='LOCK_AXIS_1'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='LOCK_AXIS_2'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='TELESCOPE_JOYSTICK_REVERSE'>
+  <oneSwitch name='JOYSTICK_REVERSE_NS'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='JOYSTICK_REVERSE_WE'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='JOYSTICK_REVERSE_SWAP'>
+      Off
+  </oneSwitch>
+</newSwitchVector>
+<newSwitchVector device='Alpaca Telescope' name='SIMULATE_PIER_SIDE'>
+  <oneSwitch name='SIMULATE_YES'>
+      Off
+  </oneSwitch>
+  <oneSwitch name='SIMULATE_NO'>
+      On
+  </oneSwitch>
+</newSwitchVector>
+</INDIDriver>
